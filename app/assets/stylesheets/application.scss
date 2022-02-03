@@ -1,2 +1,66 @@
 // here your custom bootstrap variables...
 @import "bootstrap";
+@import 'trix/dist/trix.css';
+@import "./actiontext.css";
+
+/*!
+* 
+* GENERAL FOOTER
+* BG COLOR color #023047  
+* BG 2 #011440
+* 
+*/
+
+.footer {
+    width: 100%;
+    height: auto;
+    border: 1px solid #023047;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    margin-top: 21rem;
+}
+
+.footer-bg {
+    background-color: #011440;
+}
+
+.part {
+    padding: 1rem;
+}
+
+.footer-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-center {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.trix-content .attachment-gallery>action-text-attachment,
+.trix-content .attachment-gallery>.attachment {
+    flex: 1 0 33%;
+    padding: 0 0.5em;
+    max-width: 33%;
+}
+
+.trix-content .attachment-gallery.attachment-gallery--2>action-text-attachment,
+.trix-content .attachment-gallery.attachment-gallery--2>.attachment,
+.trix-content .attachment-gallery.attachment-gallery--4>action-text-attachment,
+.trix-content .attachment-gallery.attachment-gallery--4>.attachment {
+    flex-basis: 50%;
+    max-width: 50%;
+}
+
+.trix-content action-text-attachment .attachment {
+    padding: 0 !important;
+    max-width: 100% !important;
+}

@@ -1,0 +1,40 @@
+<link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
+<div id="<%= dom_id cour %>">
+  
+  <p>
+    <strong>Thumbnail:</strong>
+    <%= cour.thumbnail %>
+  </p>
+  
+  <p>
+    <strong>Cours:</strong>
+    <video
+        id="my-video"
+        class="video-js"
+        controls
+        preload="auto"
+        width="100%"
+        height="auto"
+        poster="<%= url_for(@cour.thumbnail)%>"
+        data-setup="{}"
+      >
+        <source src="<%= url_for(@cour.video) %>" type="video/mp4" />
+      </video>
+  </p>
+  
+  <p>
+    <strong>Title:</strong>
+    <%= cour.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= cour.description %>
+  </p>
+
+  <p>
+    <strong>Formation:</strong>
+    <%= cour.formation_id %>
+  </p>
+
+</div>

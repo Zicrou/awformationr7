@@ -1,0 +1,49 @@
+<%= form_with(model: cour) do |form| %>
+  <% if cour.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(cour.errors.count, "error") %> prohibited this cour from being saved:</h2>
+
+      <ul>
+        <% cour.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :Selectioner_une_video %>
+    <%= form.file_field :video %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :Selectioner_une_miniature %>
+    <%= form.file_field :thumbnail %>
+  </div>
+
+  <div>
+    <%= form.label :formation_id, style: "display: block" %>
+    <%= form.collection_select(:formation_id, Formation.all, :id, :name,
+        {
+          include_blank: true
+        },
+        class: 'form-control',
+      ) 
+    %>
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.rich_text_area :description %>
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<!--h1>Cours</h1-->
+<%#= current_user.role %>
+  <div style="display:flex;justify-content:center;">
+
+    <% @cours.each do |cour| %>
+
+      <div class="card col-sm-3" style="margin-right: 2rem;">
+        <span class="card-img-top"><%= image_tag url_for(cour.thumbnail), class:"card-img-top"%></span>
+        <div class="card-body">
+          <h5 class="card-title"><%= cour.title %></h5>
+          <p class="card-text"><%= cour.description %>. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <%= link_to 'Lire', cour, class:"btn btn-primary form-control", style:"background-color:#023047;" %>
+          <%#= link_to 'Edit', edit_cour_path(cour), class:"btn btn-primary", style:"background-color:#023047;" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  
+<br>
+
+<%= link_to 'New Cour', new_cour_path %>
+
+</div>
